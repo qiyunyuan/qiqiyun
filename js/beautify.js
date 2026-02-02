@@ -12,7 +12,7 @@ const DEFAULT_CONFIG = {
     sliders: ['', '', ''], // 3张轮播图
     apps: [ // 6个APP图标和名称
         { name: 'APP', icon: '' },
-        { name: 'APP', icon: '' },
+        { name: 'chat', icon: '' },
         { name: 'APP', icon: '' },
         { name: 'APP', icon: '' },
         { name: '设置', icon: '' },

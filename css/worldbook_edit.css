@@ -1,0 +1,112 @@
+/* css/worldbook_edit.css */
+
+/* 编辑页容器 - 背景改回白色，填满高度 */
+.wb-edit-container {
+    background-color: #fff; 
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* 防止双重滚动条 */
+}
+
+/* 原来的卡片 - 去掉所有卡片样式，变成普通容器 */
+.wb-form-card {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 20px; /* 保持内容与边缘的距离 */
+    margin-bottom: 0;
+    height: 100%;
+    overflow-y: auto; /* 内容在这里滚动 */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 增加一点间距，呼吸感更强 */
+}
+
+/* 表单项 */
+.wb-form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* 标签样式 */
+.wb-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #e082a4;
+}
+
+/* 输入框通用样式 - 背景稍微深一点，突出显示 */
+.wb-input,
+.wb-select,
+.wb-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddbdb; /* 边框淡一点 */
+    border-radius: 12px;
+    font-size: 14px;
+    background-color: #ffffff; /* 浅灰色背景 */
+    outline: none;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.wb-input:focus,
+.wb-select:focus,
+.wb-textarea:focus {
+    border-color: #ffb7d2;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 183, 210, 0.1); /* 聚焦时加一点点光晕 */
+}
+
+/* 下拉框 */
+.select-wrapper {
+    position: relative;
+}
+
+/* 一行两列布局 */
+.wb-row {
+    display: flex;
+    gap: 15px;
+}
+.flex-1 {
+    flex: 1;
+}
+
+/* 文本域 */
+.wb-textarea {
+    min-height: 200px; /* 加高一点，写内容更爽 */
+    resize: none;
+    line-height: 1.6;
+}
+
+/* 词符统计行 */
+.wb-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wb-counter {
+    font-size: 12px;
+    color: #bbb;
+}
+
+/* 隐藏类 */
+.hidden {
+    display: none;
+}
+
+/* 顶部右侧保存按钮 */
+.header-right-btn {
+    position: absolute;
+    right: 15px;
+    font-size: 15px;
+    color: #e082a4;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.header-right-btn:active {
+    opacity: 0.7;
+}

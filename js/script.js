@@ -1,6 +1,10 @@
 import { switchPage } from './router.js';
 import { initApiSettings } from './api.js';
 import { initBeautify } from './beautify.js';
+import { initCharacterSettings, resetCharacterData } from './character.js';
+import { initProfile, resetProfileData } from './charprofile.js';
+import { initWorldbook } from './worldbook.js';
+import { initWorldbookEdit } from './worldbook_edit.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 初始化 API 模块
@@ -8,6 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初始化美化设置模块 (应用已保存的主题)
     initBeautify();
+
+    // 初始化角色设定
+initCharacterSettings();
+
+// 初始化角色档案
+    initProfile();
+
+    // 初始化世界书模块
+    initWorldbook();
+
+    // 初始化世界书编辑模块
+    initWorldbookEdit();
 
     // --- 这里的代码是专门给我写的 ---
     // 时钟功能
@@ -74,4 +90,39 @@ document.addEventListener('DOMContentLoaded', () => {
             switchPage('page-settings');
         });
     }
+
+    // 监听“角色设定”按钮点击
+const btnOpenChar = document.getElementById('btn-open-character');
+    if (btnOpenChar) {
+        btnOpenChar.addEventListener('click', () => {
+            resetCharacterData(); // 每次点进来，都强制重置数据！
+            switchPage('page-character-settings');
+        });
+    }
+
+ // 监听“角色档案”按钮点击
+    const btnOpenProfile = document.getElementById('btn-open-profile');
+    if (btnOpenProfile) {
+        btnOpenProfile.addEventListener('click', () => {
+            resetProfileData(); // 每次点进来，都强制重置数据！
+            switchPage('page-character-profile');
+        });
+    }
+
+    // 监听“世界书”按钮
+const btnOpenWorldbook = document.getElementById('btn-open-worldbook');
+if (btnOpenWorldbook) {
+    btnOpenWorldbook.addEventListener('click', () => {
+        switchPage('page-worldbook');
+    });
+}
+
+// 监听“世界书”返回按钮
+const btnBackWorldbook = document.getElementById('btn-back-worldbook');
+if (btnBackWorldbook) {
+    btnBackWorldbook.addEventListener('click', () => {
+        switchPage('page-settings');
+    });
+}
+
 });

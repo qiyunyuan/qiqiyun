@@ -31,7 +31,7 @@
             <div class="time-label">属于我们的时间</div>
             <div class="time-display" id="clock-display">00:00:00</div>
         </div>
-        
+
         <!-- 底部区域 -->
         <div class="bottom-area">
             <!-- 图片轮播区域 -->
@@ -50,7 +50,7 @@
                 </div>
                 <div class="app-item">
                     <div class="app-icon"></div>
-                    <div class="app-name">APP</div>
+                    <div class="app-name">chat</div>
                 </div>
                 <div class="app-item">
                     <div class="app-icon"></div>
@@ -86,12 +86,28 @@
                     <div class="settings-item-text">API 设置</div>
                     <div class="settings-arrow">›</div>
                 </div>
+                <div class="settings-item" id="btn-open-character">
+                    <div class="settings-item-text">角色设定</div>
+                    <div class="settings-arrow">›</div>
+                </div>
+                <div class="settings-item" id="btn-open-profile">
+                    <div class="settings-item-text">角色档案</div>
+                    <div class="settings-arrow">›</div>
+                </div>
+                <div class="settings-item" id="btn-open-worldbook">
+                    <div class="settings-item-text">世界书</div>
+                    <div class="settings-arrow">›</div>
+                </div>
                 <div class="settings-item">
                     <div class="settings-item-text">主题设置</div>
                     <div class="settings-arrow">›</div>
                 </div>
                 <div class="settings-item" id="btn-open-beautify">
                     <div class="settings-item-text">美化设置</div>
+                    <div class="settings-arrow">›</div>
+                </div>
+                <div class="settings-item">
+                    <div class="settings-item-text">记忆</div>
                     <div class="settings-arrow">›</div>
                 </div>
                 <div class="settings-item">
@@ -389,6 +405,191 @@
             </div>
         </div>
     </div>
+
+    <!-- 角色设定页面 -->
+<div id="page-character-settings" class="page">
+    <!-- 顶部标题栏 -->
+    <div class="app-header">
+        <div id="btn-back-character" class="back-btn">‹</div>
+        <div class="title">角色设定</div>
+    </div>
+    
+    <!-- 角色切换 Tab -->
+    <div class="char-tabs">
+        <div class="char-tab-btn active" data-char="char1">沈辞</div>
+        <div class="char-tab-btn" data-char="char2">祁韵</div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="app-content character-content">
+        <div id="char-content-area">
+            <!-- JS 会在这里生成内容 -->
+        </div>
+        
+        <button id="btn-add-category" class="btn-add-category">+ 新增分类</button>
+    </div>
+
+    <!-- 底部保存栏 -->
+    <div class="save-bar">
+        <button id="btn-save-char" class="btn-save-char">保存设定</button>
+    </div>
+</div>
+
+    <!-- 角色档案页面 -->
+    <div id="page-character-profile" class="page">
+        <!-- 顶部标题栏 -->
+        <div class="app-header">
+            <div id="btn-back-profile" class="back-btn">‹</div>
+            <div class="title">角色档案</div>
+        </div>
+        
+        <!-- 角色切换 Tab -->
+        <div class="profile-tabs">
+            <div class="profile-tab-btn active" data-char="char1">沈辞</div>
+            <div class="profile-tab-btn" data-char="char2">祁韵</div>
+        </div>
+
+        <!-- 内容区域 -->
+        <div class="app-content profile-content">
+            <div id="profile-content-area">
+                <!-- JS 生成内容 -->
+            </div>
+            
+            <button id="btn-add-profile-category" class="btn-add-profile-category">+ 新增分类</button>
+        </div>
+
+        <!-- 底部保存栏 -->
+        <div class="profile-save-bar">
+            <button id="btn-save-profile" class="btn-save-profile">保存档案</button>
+        </div>
+    </div>
+
+    <!-- 世界书页面 -->
+    <div id="page-worldbook" class="page">
+        <!-- 顶部标题栏 -->
+        <div class="app-header">
+            <div id="btn-back-worldbook" class="back-btn">‹</div>
+            <div class="title">世界书</div>
+        </div>
+        <!-- 内容区域 -->
+        <div class="app-content worldbook-content">
+            <div id="worldbook-list" class="worldbook-list">
+                <!-- JS 会在这里生成“全局”分类 -->
+            </div>
+            
+            <!-- 预留的新增按钮 -->
+            <button id="btn-add-wb-category" class="btn-add-category" style="margin-top: 20px;">+ 新增分类</button>
+        </div>
+    </div>
+
+        <!-- 新建分类弹窗 -->
+    <div id="modal-new-category" class="wb-modal-overlay hidden">
+        <div class="wb-modal-box">
+            <div class="wb-modal-title">新建分类</div>
+            <input type="text" id="input-cat-name" class="wb-modal-input" placeholder="请输入分类名称...">
+            <div class="wb-modal-buttons">
+                <button id="btn-cancel-cat" class="wb-modal-btn cancel">取消</button>
+                <button id="btn-confirm-cat" class="wb-modal-btn confirm">确定</button>
+            </div>
+        </div>
+    </div>
+
+
+        <!-- 世界书条目列表页面 (新加的) -->
+    <div id="page-worldbook-entries" class="page">
+        <div class="app-header">
+            <div id="btn-back-wb-entries" class="back-btn">‹</div>
+            <div class="title" id="wb-category-title">全局</div>
+            <!-- 右上角新增按钮 -->
+            <div id="btn-new-wb-entry" class="header-right-btn" style="font-size: 24px;">+</div>
+        </div>
+        <div class="app-content" style="background-color: #fff;">
+            <div id="wb-entries-list" class="wb-entries-container">
+                <!-- JS 会在这里生成条目 -->
+            </div>
+        </div>
+    </div>
+
+        <!-- 世界书条目编辑页面 -->
+    <div id="page-worldbook-edit" class="page">
+        <!-- 顶部标题栏 -->
+        <div class="app-header">
+            <div id="btn-back-wb-edit" class="back-btn">‹</div>
+            <div class="title">条目</div>
+            <!-- 右上角的保存文字按钮 -->
+            <div id="btn-save-wb-entry" class="header-right-btn">保存</div>
+        </div>
+        
+        <!-- 内容区域 -->
+        <div class="app-content wb-edit-container">
+            <div class="wb-form-card">
+                
+                <!-- 标题 -->
+                <div class="wb-form-item">
+                    <label class="wb-label">标题</label>
+                    <input type="text" id="wb-title" class="wb-input" placeholder="输入标题">
+                </div>
+
+                <!-- 条目状态 -->
+                <div class="wb-form-item">
+                    <label class="wb-label">条目状态</label>
+                    <div class="select-wrapper">
+                        <select id="wb-status" class="wb-select">
+                            <option value="blue">🔵 蓝灯 (永久开启)</option>
+                            <option value="green">🟢 绿灯 (关键词触发)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 关键词 -->
+                <div class="wb-form-item">
+                    <label class="wb-label">关键词</label>
+                    <input type="text" id="wb-keys" class="wb-input" placeholder="多关键词用逗号隔开">
+                </div>
+
+                <!-- 触发策略 -->
+                <div class="wb-form-item">
+                    <label class="wb-label">触发策略 / 插入位置</label>
+                    <div class="select-wrapper">
+                        <select id="wb-strategy" class="wb-select">
+                            <option value="before_char">角色定义之前</option>
+                            <option value="after_char">角色定义之后</option>
+                            <option value="depth">系统在深度 D 处</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 插入深度 (默认隐藏，JS控制显示) -->
+                <div class="wb-form-item hidden" id="group-wb-depth">
+                    <label class="wb-label">插入深度</label>
+                    <input type="number" id="wb-depth" class="wb-input" value="4">
+                </div>
+
+                <!-- 顺序 & 概率 (一行两个) -->
+                <div class="wb-row">
+                    <div class="wb-form-item flex-1">
+                        <label class="wb-label">顺序</label>
+                        <input type="number" id="wb-order" class="wb-input" value="100">
+                    </div>
+                    <div class="wb-form-item flex-1">
+                        <label class="wb-label">触发概率 (%)</label>
+                        <input type="number" id="wb-probability" class="wb-input" value="100">
+                    </div>
+                </div>
+
+                <!-- 内容 -->
+                <div class="wb-form-item">
+                    <div class="wb-label-row">
+                        <label class="wb-label">内容</label>
+                        <span class="wb-counter" id="wb-content-count">词符: 0</span>
+                    </div>
+                    <textarea id="wb-content" class="wb-textarea" placeholder="输入世界书内容..."></textarea>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 
 </div>
 

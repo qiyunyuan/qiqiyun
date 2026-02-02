@@ -1,0 +1,168 @@
+/* 角色设定页面的专属样式 */
+
+/* 顶部角色切换 Tab */
+.char-tabs {
+    display: flex;
+    background-color: var(--card-bg);
+    padding: 10px 15px 0;
+    gap: 10px;
+}
+
+.char-tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #888;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 15px 15px 0 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.char-tab-btn.active {
+    background-color: var(--white);
+    color: var(--black);
+    font-weight: bold;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+}
+
+/* 内容滚动区修正 */
+.character-content {
+    padding: 20px;
+    padding-bottom: 80px; /* 给底部保存按钮留位置 */
+}
+
+/* 分类卡片 */
+.char-category {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--main-bg);
+    padding-bottom: 8px;
+}
+
+.category-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--black);
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 70%;
+}
+
+.btn-del-category {
+    font-size: 12px;
+    color: #ff6b6b;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+/* 条目行 */
+.char-item-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.item-label {
+    width: 70px;
+    font-size: 14px;
+    color: #666;
+    border: none;
+    border-bottom: 1px dashed #ccc;
+    padding: 4px 0;
+    background: transparent;
+}
+
+.item-input {
+    flex: 1;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+.btn-del-item {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn-del-item:hover {
+    color: #ff6b6b;
+}
+
+/* 按钮组 */
+.btn-add-item {
+    width: 100%;
+    padding: 8px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    color: #888;
+    background: #fff;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.btn-add-category {
+    width: 100%;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px dashed var(--card-bg);
+    border-radius: 12px;
+    color: #888;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* 底部保存按钮悬浮 */
+.save-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-save-char {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--card-bg);
+    color: var(--black);
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+}
+
+.btn-save-char:active {
+    transform: scale(0.98);
+}

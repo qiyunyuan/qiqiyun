@@ -9,3 +9,7 @@
 @import "./components.css";
 @import "./settings.css";
 @import "./api.css";
+@import "./character.css";
+@import "./charprofile.css";
+@import "./worldbook.css";
+@import "./worldbook_edit.css";
