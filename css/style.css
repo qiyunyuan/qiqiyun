@@ -13,3 +13,6 @@
 @import "./charprofile.css";
 @import "./worldbook.css";
 @import "./worldbook_edit.css";
+
+/* 命运转盘样式 */
+@import "./fate.css";

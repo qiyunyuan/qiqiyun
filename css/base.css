@@ -105,3 +105,61 @@ body {
     overflow-y: auto; /* 内容多了可滚动 */
     /* 可以在这里加 border-radius 比如 20px 20px 0 0 来做圆角效果 */
 }
+
+/* =================================
+   通用菜单列表样式 (可爱版)
+   ================================= */
+.menu-list {
+    padding: 25px 20px; /* 稍微多点留白 */
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* 拉开间距，不拥挤 */
+}
+
+.menu-item {
+    background-color: #fff;
+    padding: 18px 20px;
+    border-radius: 25px; /* 大圆角才可爱 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* 重点：粉色边框和软软的阴影 */
+    border: 2px solid #ffeef5; 
+    box-shadow: 0 6px 15px rgba(255, 182, 193, 0.15);
+    
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1); /* 弹性动画 */
+    position: relative;
+    overflow: hidden;
+}
+
+/* 悬停效果：稍微浮起来一点 */
+.menu-item:hover {
+    transform: translateY(-2px);
+    border-color: #ffdbea;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.25);
+}
+
+/* 点击效果：按下去 */
+.menu-item:active {
+    transform: scale(0.96);
+    background-color: #fff0f5; /* 按下变粉 */
+}
+
+.menu-text {
+    font-size: 17px;
+    font-weight: 600;
+    color: #555; /* 字体颜色深灰，比纯黑柔和 */
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 图标和字的间距 */
+}
+
+.menu-arrow {
+    font-size: 22px;
+    color: #ffb7c5; /* 箭头也要粉粉的 */
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+}

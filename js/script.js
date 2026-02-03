@@ -5,6 +5,7 @@ import { initCharacterSettings, resetCharacterData } from './character.js';
 import { initProfile, resetProfileData } from './charprofile.js';
 import { initWorldbook } from './worldbook.js';
 import { initWorldbookEdit } from './worldbook_edit.js';
+import { initFate } from './fate.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 初始化 API 模块
@@ -24,6 +25,9 @@ initCharacterSettings();
 
     // 初始化世界书编辑模块
     initWorldbookEdit();
+
+    // 初始化命运转盘模块
+    initFate();
 
     // --- 这里的代码是专门给我写的 ---
     // 时钟功能
@@ -124,5 +128,30 @@ if (btnBackWorldbook) {
         switchPage('page-settings');
     });
 }
+
+// 1. 监听主页“日常”按钮
+    const btnDaily = document.getElementById('btn-daily');
+    if (btnDaily) {
+        btnDaily.addEventListener('click', () => {
+            switchPage('page-daily');
+        });
+    }
+
+    // 2. 监听日常页面的“返回”按钮
+    const btnBackDaily = document.getElementById('btn-back-daily');
+    if (btnBackDaily) {
+        btnBackDaily.addEventListener('click', () => {
+            switchPage('page-home');
+        });
+    }
+
+    // 监听“命运转盘”入口
+const btnOpenFate = document.getElementById('btn-open-fate');
+if (btnOpenFate) {
+    btnOpenFate.addEventListener('click', () => {
+        switchPage('page-fate');
+    });
+}
+
 
 });

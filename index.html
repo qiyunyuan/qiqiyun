@@ -46,19 +46,19 @@
             <div class="apps-grid">
                 <div class="app-item">
                     <div class="app-icon"></div>
-                    <div class="app-name">APP</div>
+                    <div class="app-name">家园</div>
                 </div>
                 <div class="app-item">
                     <div class="app-icon"></div>
-                    <div class="app-name">chat</div>
+                    <div class="app-name">陪伴</div>
                 </div>
                 <div class="app-item">
                     <div class="app-icon"></div>
-                    <div class="app-name">APP</div>
+                    <div class="app-name">百宝箱</div>
                 </div>
-                <div class="app-item">
+                <div class="app-item" id="btn-daily">
                     <div class="app-icon"></div>
-                    <div class="app-name">APP</div>
+                    <div class="app-name">日常</div>
                 </div>
                 <div class="app-item" id="btn-settings">
                     <div class="app-icon"></div>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="app-item">
                     <div class="app-icon"></div>
-                    <div class="app-name">APP</div>
+                    <div class="app-name">回忆</div>
                 </div>
             </div>
         </div>
@@ -589,6 +589,93 @@
             </div>
         </div>
     </div>
+
+<!-- 日常页面 -->
+<div id="page-daily" class="page">
+    <!-- 顶部标题栏 -->
+    <div class="app-header">
+        <div id="btn-back-daily" class="back-btn">‹</div>
+        <div class="title">日常</div>
+    </div>
+    <!-- 内容区域 -->
+    <div class="app-content">
+        <!-- 通用菜单列表 -->
+<!-- 在 page-daily 里面 -->
+<div class="menu-list">
+    <div class="menu-item" id="btn-open-fate">
+        <div class="menu-text">🎡 幸运老虎机</div> <!-- 加了图标 -->
+        <div class="menu-arrow">›</div>
+    </div>
+    <div class="menu-item">
+        <div class="menu-text">📅 专属日历</div> <!-- 改个好听的名字 -->
+        <div class="menu-arrow">›</div>
+    </div>
+    <div class="menu-item">
+        <div class="menu-text">📒 喵喵记账</div> <!-- 可爱一点 -->
+        <div class="menu-arrow">›</div>
+    </div>
+</div>
+    </div>
+</div>
+
+<!-- 幸运老虎机页面 -->
+<div id="page-fate" class="page">
+    <div class="app-header">
+        <div id="btn-back-fate" class="back-btn">‹</div>
+        <div class="title">幸运老虎机</div>
+        <div id="btn-fate-settings" style="position:absolute; right:20px; cursor:pointer;">⚙️</div>
+    </div>
+    <div class="app-content">
+        
+        <!-- 游戏显示区域 -->
+        <div id="fate-display-area">
+            
+            <!-- 分类标题显示 -->
+            <div class="category-display">
+                <span class="category-label">当前主题</span>
+                <h2 id="current-category-title">...</h2>
+            </div>
+
+            <div id="slot-container" class="game-container">
+                <div class="slot-machine">
+                    <!-- 【修改】这里改成眼睛了 -->
+                    <div class="slot-eyes"></div>
+                    
+                    <div class="slot-window">
+                        <div class="slot-strip"></div>
+                        <div class="slot-overlay"></div>
+                        <!-- 中奖线 -->
+                        <div class="win-line"></div>
+                    </div>
+
+                    <!-- 【修改】底部的装饰删掉了 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 启动按钮 -->
+        <button id="btn-start-fate" class="action-btn">开始摇奖</button>
+        
+        <!-- 设置弹窗 (保持不变) -->
+        <div id="fate-settings-modal" class="modal hidden">
+            <div class="modal-content">
+                <h3>配置选项</h3>
+                <div class="input-group">
+                    <select id="category-select"></select>
+                    <button id="btn-new-category" class="small-btn" title="新建分类">+</button>
+                    <button id="btn-del-category" class="small-btn" style="background:#ff6b6b; margin-left:5px;" title="删除当前分类">-</button>
+                </div>
+                <ul id="item-list"></ul>
+                <div class="input-group">
+                    <input type="text" id="new-item-input" placeholder="加个新选项...">
+                    <button id="btn-add-item" class="small-btn">加</button>
+                </div>
+                <button id="btn-close-settings" class="action-btn small">保存并关闭</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 </div>

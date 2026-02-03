@@ -1,0 +1,221 @@
+/* 幸运老虎机样式 */
+
+#fate-display-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    gap: 20px;
+}
+
+/* --- 分类标题样式 --- */
+.category-display {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 183, 197, 0.3);
+    border: 2px solid #fff;
+    min-width: 150px;
+}
+
+.category-label {
+    display: block;
+    font-size: 12px;
+    color: #ff9a9e;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+#current-category-title {
+    margin: 0;
+    font-size: 22px;
+    color: #555;
+    font-weight: 800;
+}
+
+/* --- 按钮样式 --- */
+.action-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 12px 50px;
+    background: linear-gradient(135deg, #ffb7c5, #ff9a9e);
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 6px 15px rgba(255, 154, 158, 0.4);
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+}
+.action-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(255, 154, 158, 0.4);
+}
+
+/* --- 老虎机主体 (小机器人) --- */
+.game-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slot-machine {
+    width: 260px;
+    background: #ffecf0;
+    border-radius: 30px; /* 圆润一点 */
+    padding: 15px;
+    padding-bottom: 25px; /* 下巴稍微长一点 */
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.1),
+        inset 0 -5px 0 rgba(0,0,0,0.05);
+    border: 4px solid #fff;
+    position: relative;
+}
+
+/* 内部窗口 (嘴巴) */
+.slot-window {
+    height: 140px;
+    background: #fff;
+    border-radius: 15px; /* 嘴巴圆角 */
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #ffb7c5;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.slot-strip {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+}
+
+.slot-item {
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 900;
+    color: #333;
+    text-shadow: 2px 2px 0px rgba(255, 183, 197, 0.3);
+}
+
+.slot-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(
+        to bottom, 
+        rgba(0,0,0,0.3) 0%, 
+        rgba(255,255,255,0.1) 20%, 
+        rgba(255,255,255,0) 50%, 
+        rgba(255,255,255,0.1) 80%, 
+        rgba(0,0,0,0.3) 100%
+    );
+    pointer-events: none;
+    border-radius: 12px;
+}
+
+.win-line {
+    position: absolute;
+    top: 50%; left: 0;
+    width: 100%; height: 2px;
+    background: rgba(255, 0, 0, 0.1);
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+}
+.win-line::before, .win-line::after {
+    content: '◀';
+    position: absolute;
+    top: -6px;
+    color: #ffb7c5;
+    font-size: 12px;
+}
+.win-line::before { left: 5px; }
+.win-line::after { content: '▶'; right: 5px; }
+
+/* --- 眼睛样式 --- */
+.slot-eyes {
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* 眼睛分得开一点，显得呆萌 */
+    margin-bottom: 10px;
+}
+.slot-eyes::before, .slot-eyes::after {
+    content: '';
+    width: 12px; height: 12px;
+    background: #ffa3b5; 
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- 弹窗通用样式 --- */
+.hidden { display: none !important; }
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 320px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.input-group select, .input-group input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+#item-list {
+    list-style: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+}
+#item-list li {
+    padding: 8px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+}
+#item-list li span.del {
+    color: #ff6b6b;
+    cursor: pointer;
+    font-weight: bold;
+}
+.small-btn {
+    background: #ffb7c5;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    padding: 0 12px;
+    cursor: pointer;
+}
+.action-btn.small {
+    margin: 0 auto;
+    padding: 8px 20px;
+    font-size: 14px;
+}
