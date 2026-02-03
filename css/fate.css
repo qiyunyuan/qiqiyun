@@ -37,7 +37,7 @@
 }
 
 /* --- 按钮样式 --- */
-.action-btn {
+.fate-action-btn {
     display: block;
     margin: 10px auto;
     padding: 12px 50px;
@@ -51,7 +51,7 @@
     transition: transform 0.1s, box-shadow 0.1s;
     cursor: pointer;
 }
-.action-btn:active {
+.fate-action-btn:active {
     transform: scale(0.95);
     box-shadow: 0 2px 8px rgba(255, 154, 158, 0.4);
 }
@@ -214,7 +214,7 @@
     padding: 0 12px;
     cursor: pointer;
 }
-.action-btn.small {
+.fate-action-btn.small {
     margin: 0 auto;
     padding: 8px 20px;
     font-size: 14px;
